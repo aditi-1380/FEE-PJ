@@ -1,120 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+
+
+:root {
+  --primary-color: #08003f;
+  --secondary-color: #010029;
+}
+
 * {
-  margin: 0;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  background-color: var(--primary-color);
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
 }
 
-.navbar {
-  width: 100%;
-  height: 50px;
-  background-color: black;
-  position: sticky;
-  top: 0;
+header {
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  background-color: var(--secondary-color);
+
 }
-.navbar-container {
+
+.search {
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  border-radius: 50px;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  color: #dcc2c2;
+}
+
+.search::placeholder {
+  color: #5a5ea3;
+}
+
+.search:focus {
+  outline: none;
+  background-color: var(--primary-color);
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.movie {
+  width: 300px;
+  margin: 1rem;
+  background-color: var(--secondary-color);
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  border-radius: 3px;
+}
+
+.movie img {
+  width: 100%;
+}
+
+.movie-info {
+  color: #eee;
   display: flex;
   align-items: center;
-  padding: 0 50px;
-  height: 100%;
-  color: white;
-  font-family: "Sen", sans-serif;
+  justify-content: space-between;
+  gap: 0.2rem;
+  padding: 0.5rem 1rem 1rem;
+  letter-spacing: 0.5px;
 }
 
-.logo-container {
-  flex: 1;
+.movie-info h3 {
+  margin-top: 0;
 }
 
-.logo {
-  font-size: 30px;
-  color: #4dbf00;
-}
-
-.menu-container {
-  flex: 6;
-}
-
-.menu-list {
-  display: flex;
-  list-style: none;
-}
-
-.menu-list-item {
-  margin-right: 30px;
-}
-
-.menu-list-item.active {
+.movie-info span {
+  background-color: var(--primary-color);
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
   font-weight: bold;
 }
-.profile-container {
-  flex: 2;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+
+.movie-info span.green {
+  color: lightgreen;
 }
 
-.profile-text-container {
-  margin: 0 20px;
+.movie-info span.orange {
+  color: orange;
 }
 
-.profile-picture {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  object-fit: cover;
+.movie-info span.red {
+  color: red;
 }
 
-.toggle {
-  width: 40px;
-  height: 20px;
-  background-color: white;
-  border-radius: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  position: relative;
-}
-
-.toggle-icon {
-  color: goldenrod;
-}
-
-.toggle-ball {
-  width: 18px;
-  height: 18px;
-  background-color: black;
+.overview {
+  background-color: #fff;
+  padding: 2rem;
   position: absolute;
-  right: 1px;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: 1s ease all;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  max-height: 100%;
+  transform: translateY(101%);
+  overflow-y: auto;
+  transition: transform 0.3s ease-in;
 }
 
-.sidebar {
-  width: 50px;
+.movie:hover .overview {
+  transform: translateY(0);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  width: 100%;
   height: 100%;
-  background-color: black;
-  position: fixed;
-  top: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 60px;
+
 }
 
-.left-menu-icon {
+nav {
+  width: 100%;
+  height: 70px;
+  background-color: rgb(0, 5, 46);
+}
+
+label.logo {
+  font-size: 35px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: white;
-  font-size: 20px;
-  margin-bottom: 40px;
+  margin: 0 100px;
+  line-height: 80px;
 }
 
-.container {
-  background-color: #151515;
-  min-height: calc(100vh - 50px);
+nav ul {
+  float: right;
+  list-style-type: none;
+}
+
+nav ul li {
+  display: inline-block;
+  line-height: 75px;
+
+}
+
+nav ul li a {
+  text-decoration: none;
   color: white;
+  font-size: 18px;
+  text-transform: capitalize;
+  padding: 8px 20px;
 }
 
-.content-container {
-  margin-left: 50px;
+nav ul li a.active,
+a:hover {
+  background-color: rgb(0, 0, 0);
+
 }
